@@ -16,10 +16,10 @@ This repository is a fork of the [MongoDB TypesScript example repo](https://gith
 
 ## Running the example app
 
-Create a project in Tigris, create an application key, and copy the Client ID and Client Secret values for use in a `.env` file. Then:
+Create a project in Tigris, create an application key, and copy the Project name, Client ID, and Client Secret values for use in a `.env` file. Then:
 
 1. Create a `.env` file in the root of the app with the same properties as `env.example`
-2. Update the values with your connection string, database name, and collection name
+2. Update the values within your connection string, and database name (the name of your Tigris project)
 
 Install the app dependencies:
 
@@ -67,17 +67,17 @@ curl --location --request DELETE 'http://localhost:8080/games/{_id}'
 
 ## Getting to know the code
 
-The below diagram shows the overall architecture of the diagram and the following sections will explain the code.
+The diagram below shows the overall application architecture; the following sections will explain the code.
 
 ![Architecture diagram of the application](./images/diagram.png)
 
 ### Games Router
 
-The `src/routes/games.router.ts` class uses Express's Router functionality. It defines the endpoints available to clients for the Create, Read, Update and Delete (CRUD) operations and then communicates with the database via the [MongoDB NodeJS Driver](https://github.com/mongodb/node-mongodb-native).
+The `src/routes/games.router.ts` class uses Express's Router functionality. It defines the endpoints available to clients for the Create, Read, Update, and Delete (CRUD) operations and then communicates with the database via the [MongoDB NodeJS Driver](https://github.com/mongodb/node-mongodb-native).
 
 ### Database Service
 
-The `src/services/database.service.ts` class implements the connection the database. This is also where schema validation is applied to the collection at database level.
+The `src/services/database.service.ts` class implements the connection to the database. This is also where schema validation is applied to the collection.
 
 ### Models
 
